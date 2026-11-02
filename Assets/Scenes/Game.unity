@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.9528302, g: 0.4000089, b: 0.63539284, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
   - component: {fileID: 330585548}
+  - component: {fileID: 330585549}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -273,6 +274,22 @@ MonoBehaviour:
   offsetZ: -12
   offsetY: 4
   suavizado: 4
+--- !u!114 &330585549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6dc75b03abb0d3beb59aaef20c902a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FondoDinamico
+  camara: {fileID: 330585545}
+  colorInicial: {r: 0.6, g: 0.9915603, b: 1, a: 1}
+  colorFinal: {r: 0.32778022, g: 0, b: 0.39607844, a: 1}
+  velocidadCambio: 0.2
 --- !u!1 &331946293
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +456,7 @@ Light:
   serializedVersion: 13
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
+  m_Intensity: 1.2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1097,7 +1114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1281391988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1171,6 +1188,7 @@ GameObject:
   - component: {fileID: 1320111283}
   - component: {fileID: 1320111282}
   - component: {fileID: 1320111287}
+  - component: {fileID: 1320111288}
   m_Layer: 0
   m_Name: Pelota
   m_TagString: Player
@@ -1315,6 +1333,22 @@ MonoBehaviour:
   sensibilidadMaxima: 0.05
   incrementoDificultad: 0.0001
   velocidadMaximaCaida: 2.5
+--- !u!114 &1320111288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320111281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5510da082a2b07494bfbe0d2c9d3eb5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColorPelota
+  rendererPelota: {fileID: 1320111284}
+  colorA: {r: 1, g: 0, b: 1, a: 1}
+  colorB: {r: 0, g: 1, b: 1, a: 1}
+  velocidad: 1
 --- !u!1 &1505485599
 GameObject:
   m_ObjectHideFlags: 0
