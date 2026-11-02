@@ -9,6 +9,7 @@ public class NivelGenerador : MonoBehaviour
     [SerializeField] private int cantidadInicial = 15;
     [SerializeField] private float distanciaVertical = 2.5f;
     [SerializeField] private float distanciaReciclaje = 8f;
+    [SerializeField, Range(0f, 1f)] private float probabilidadPotenciador = 0.25f;
 
     private List<GameObject> anillos = new List<GameObject>();
 
@@ -40,6 +41,7 @@ public class NivelGenerador : MonoBehaviour
                 Quaternion.Euler(0f, rotacionY, 0f)
             );
 
+            if (i >= 2) PonerPotenciador(nuevoAnillo);
             anillos.Add(nuevoAnillo);
         }
     }
@@ -65,8 +67,18 @@ public class NivelGenerador : MonoBehaviour
                     Random.Range(0f, 360f),
                     0f
                 );
+
+                PonerPotenciador(anillo);
             }
         }
+    }
+
+    // Activa (o apaga) el orbe de súper velocidad del anillo según la probabilidad configurada
+    void PonerPotenciador(GameObject anillo)
+    {
+        Transform orbe = anillo.transform.Find("Potenciador");
+        if (orbe != null)
+            orbe.gameObject.SetActive(Random.value < probabilidadPotenciador);
     }
 
     float ObtenerYMasBaja()

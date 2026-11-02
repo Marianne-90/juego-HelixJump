@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 // Tarea 5: controla cuándo se completa un nivel y a qué escena se pasa después.
 public class ControlNivel : MonoBehaviour
@@ -13,6 +14,7 @@ public class ControlNivel : MonoBehaviour
     [SerializeField] private TMP_Text textoTituloNivelCompletado;
     [SerializeField] private TMP_Text textoBotonSiguiente;
     [SerializeField] private TMP_Text textoProgreso;
+    [SerializeField] private Slider barraProgreso;
 
     private bool completado;
 
@@ -30,6 +32,8 @@ public class ControlNivel : MonoBehaviour
         if (completado || scoreManager == null) return;
 
         int actual = Mathf.Min(scoreManager.ScoreActual, puntajeObjetivo);
+        if (barraProgreso != null)
+            barraProgreso.value = (float)actual / puntajeObjetivo;
         if (textoProgreso != null)
             textoProgreso.text = actual + " / " + puntajeObjetivo;
 
