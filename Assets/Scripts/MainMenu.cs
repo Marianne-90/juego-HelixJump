@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private Button botonNivel2;
+    [SerializeField] private Button botonNivel3;
 
     void Start()
     {
@@ -12,6 +13,8 @@ public class MainMenu : MonoBehaviour
         // El nivel 2 solo se habilita cuando ya se completó el nivel 1
         if (botonNivel2 != null)
             botonNivel2.interactable = PlayerPrefs.GetInt("NivelDesbloqueado", 1) >= 2;
+        if (botonNivel3 != null)
+            botonNivel3.interactable = PlayerPrefs.GetInt("NivelDesbloqueado", 1) >= 3;
     }
 
     public void Jugar()
@@ -22,6 +25,11 @@ public class MainMenu : MonoBehaviour
     public void JugarNivel2()
     {
         SceneManager.LoadScene("Nivel2");
+    }
+
+    public void JugarNivel3()
+    {
+        SceneManager.LoadScene("Nivel3");
     }
 
     public void Salir()

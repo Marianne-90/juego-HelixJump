@@ -511,7 +511,7 @@ MonoBehaviour:
   scoreManager: {fileID: 947099249}
   puntajeObjetivo: 500
   numeroNivel: 2
-  siguienteEscena: 
+  siguienteEscena: Nivel3
   panelNivelCompletado: {fileID: 213837826}
   textoTituloNivelCompletado: {fileID: 198077594}
   textoBotonSiguiente: {fileID: 1464281105}
@@ -1840,7 +1840,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1025645695
 RectTransform:
   m_ObjectHideFlags: 0
